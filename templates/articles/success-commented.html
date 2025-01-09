@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izoh muvaffaqiyatli qoldirildi - Zamonaviy Dasturchi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-container">
+    <div class="content-wrap">
+        <header>
+            <h1>Zamonaviy Dasturchi</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Asosiy</a>
+            <a href="#">Web Dasturlash</a>
+            <a href="#">Mobil Dasturlash</a>
+            <a href="#">AI va ML</a>
+            <a href="#">Dasturchilar hayoti</a>
+            <a href="create-author.html">Yangi Muallif Qo'shish</a>
+            <a href="create-article.html">Yangi Maqola Qo'shish</a>
+        </nav>
+
+        <main>
+            <div class="success-message">
+                <div class="success-icon">✅</div>
+                <h1>Izohingiz muvaffaqiyatli qoldirildi!</h1>
+                <p>Rahmat! Sizning fikringiz biz uchun muhim.</p>
+                <a href="blog-detail.html" class="button">Maqolaga qaytish</a>
+                <a href="index.html" class="button">Asosiy sahifaga o'tish</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Zamonaviy Dasturchi. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <button id="mode-toggle">Tungi rejim</button>
+
+    <script>
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            modeToggle.textContent = isDarkMode ? 'Kunduzgi rejim' : 'Tungi rejim';
+        });
+    </script>
+</body>
+</html>
+

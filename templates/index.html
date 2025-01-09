@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Zamonaviy Dasturchi {% endblock %}
+
+{% block content %}
+        <main>
+            {% for article in articles %}
+            <article class="post">
+                <img src="{{ article.image.url }}" style="width: 300px; height:400px;">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.text }}</p>
+                <a href="{% url 'articles:detail' pk=article.pk %}" class="read-more">Batafsil o'qish</a>
+                <a href="{% url 'articles:delete' pk=article.pk %}"><button id="deleteStudent" class="btn btn-danger" style="padding:10px; cursor: pointer;"><i class="fas fa-trash"></i> O'chirish</button></a>
+
+            </article>
+            {% empty %}
+                <h3>No Found</h3>
+            {% endfor %}
+        </main>
+{% endblock %}
+

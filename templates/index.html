@@ -9,7 +9,7 @@
                 <img src="{{ article.image.url }}" style="width: 300px; height:400px;">
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.text }}</p>
-                <a href="{% url 'articles:detail' pk=article.pk %}" class="read-more">Batafsil o'qish</a>
+                <a href="{{ article.get_detail_url }}" class="read-more">Batafsil o'qish</a>
                 <a href="{% url 'articles:delete' pk=article.pk %}"><button id="deleteStudent" class="btn btn-danger" style="padding:10px; cursor: pointer;"><i class="fas fa-trash"></i> O'chirish</button></a>
 
             </article>

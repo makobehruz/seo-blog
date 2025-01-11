@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} React Hooks: Funksional Komponentlar Kuchi - Zamonaviy Dasturchi {% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
         <main>
@@ -10,9 +10,9 @@
                     <span>Muallif: {{ article.author }}</span>
                     <span>Sana: {{ article.created_at }}</span>
                 </div>
-                <h1>{{ articles.title }}</h1>
-                <p>{{ articles.text }}</p>
-                <h2>1. useState Hook</h2>
+                <h1>{{ article.title }}</h1>
+                <p>{{ article.text }}</p>
+                <h2>1. useState Hook {{ article.created_at }}</h2>
                 <p>useState hook funksional komponentlarga state qo'shish imkonini beradi. Mana oddiy misol:</p>
                 <pre><code>
                     import React, { useState } from 'react';

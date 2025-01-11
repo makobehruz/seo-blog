@@ -41,8 +41,14 @@ def article_form(request):
     return render(request, 'articles/create-article.html', ctx)
 
 
-def article_detail(request, pk):
-    article = get_object_or_404(Article, pk=pk)
+def article_detail(request, pk, year, month, day, slug):
+    article = get_object_or_404(
+        Article, pk=pk,
+        created_at__year = year,
+        created_at__month = month,
+        created_at__day = day,
+        slug=slug
+    )
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         comment_text = request.POST.get('comment')
@@ -55,9 +61,8 @@ def article_detail(request, pk):
                 article=article
             )
             return redirect('articles:detail', pk=pk)
-
     comments = article.comments.all()
-    ctx = {'article': article, 'comments': comments}
+    ctx = {'article': article, 'comments': comments,}
     return render(request, 'articles/blog-detail.html', ctx)
 
 

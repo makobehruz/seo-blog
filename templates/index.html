@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Zamonaviy Dasturchi {% endblock %}
+
+{% block content %}
+    <main>
+        {% for article in articles %}
+            <article class="post">
+                <img src="{{ article.image.url }}" alt="React Hooks">
+                <h2>React Hooks: {{ article.title }}</h2>
+                <p>{{ article.article_text }}</p>
+                <a href="{% url 'articles:detail' pk=article.pk %}" class="read-more">Batafsil o'qish</a>
+                <a href="{% url 'articles:delete' pk=article.pk %}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> O'chirish</a>
+            </article>
+        {% empty %}
+                <h3>Article not available !</h3>
+        {% endfor %}
+    </main>
+{% endblock %}
+

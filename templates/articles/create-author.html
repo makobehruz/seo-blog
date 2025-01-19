@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Yangi Muallif Qo'shish - Zamonaviy Dasturchi {% endblock %}
+
+{% block content %}
+    <main>
+        <section class="create-author-form">
+            <h2>Yangi Muallif Qo'shish</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="full_name">Ism:</label>
+                    <input type="text" id="full_name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="biography">Biografiya:</label>
+                    <textarea id="biography" name="biography" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="submit-button">Muallifni Qo'shish</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}

@@ -60,7 +60,7 @@ def article_detail(request, pk, year, month, day, slug):
                 your_email=your_email,
                 article=article
             )
-            return redirect('articles:detail', pk=pk)
+            return redirect('articles:detail', pk=pk, year=year, month=month, day=day, slug=slug)
     comments = article.comments.all()
     ctx = {'article': article, 'comments': comments,}
     return render(request, 'articles/blog-detail.html', ctx)
